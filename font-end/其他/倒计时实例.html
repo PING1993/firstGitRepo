@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.t1 {
+				width: 400px;
+			}
+		</style>
+		<script type="text/javascript">
+			//getTime()时间戳 从1970年至现在的时间距离，单位为毫秒
+			var t=Math.floor(new Date().getTime()/1000);
+			var str = Math.floor(t / 86400) + '天' + Math.floor(t % 86400 / 3600) + '时' + Math.floor(t % 86400 % 3600 / 60) + '分' + t % 60 + '秒';
+			alert(str);
+			window.onload = function() {
+				var aInp = document.getElementsByTagName('input');
+				var iNew = null;
+				var iNow = null;
+				var timer = null;
+
+				aInp[2].onclick = function() {
+					iNew = new Date(aInp[0].value);
+					timer = setInterval(differ, 1000);
+					function differ() {
+						iNow = new Date();
+						var t = Math.floor((iNew - iNow) / 1000);
+						if(t >= 0) {
+							var str = Math.floor(t / 86400) + '天' + Math.floor(t % 86400 / 3600) + '时' + Math.floor(t % 86400 % 3600 / 60) + '分' + t % 60 + '秒';
+
+							aInp[1].value = str;
+						} else {
+							clearInterval(timer);
+						}
+					}
+				};
+			};
+		</script>
+	</head>
+
+	<body>
+		距离：<input class="t1" type="text" value="July 7,2017 11:43:00" /><br /> 还剩：<input class="t1" type="text" />
+		<input type="button" value="开始倒计时" />
+	</body>
+
+</html>

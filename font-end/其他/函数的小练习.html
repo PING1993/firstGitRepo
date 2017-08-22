@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			alert(sum(1,2,3,'+'));//6
+			alert(sum(10,2,3,4,'-'));//-1
+			function sum() {
+				var sum = 0;
+				var a1=0;
+				for(var i = 0; i < arguments.length - 1; i++) {
+					var n = arguments[arguments.length - 1];
+					switch(n){
+						case '+': sum += arguments[i];break;
+					    case '-': a1 += arguments[i];sum=a1-2*arguments[0];break;
+					}
+				}
+				return sum;
+			}
+
+			/*fn2(2,5);
+			fn2(6,2);
+			function fn2() {
+				var arr = [];
+				var min = arguments[0];
+				var temp = null;
+				var max = arguments[arguments.length - 1];
+				//alert(arguments[0]);
+				//alert(arguments[arguments.length - 1]);
+				if(min < max) {
+					for(var j = arguments[0]; j <= arguments[arguments.length - 1]; j++) {
+						//alert(j);
+						arr.push(j);
+					}
+					//alert(arr);
+				}else{
+					temp=min;
+					min=max;
+					max=temp;
+					for(var j = min; j <= max; j++) {
+						//alert(j);
+						arr.push(j);
+					}
+					//alert(arr);
+				}
+			}*/
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

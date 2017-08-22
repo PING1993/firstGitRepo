@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<input type="text" name="" id="" value="" />
+		<br />
+		<button>send</button> result:
+		<span id="result"></span>
+		<script type="text/javascript">
+			$('button').on('click', function() {
+				$.get('server.php', {
+					name: $('input').val()
+				}, function(data) {
+					$('#result').text(data);
+				}).error(function(){
+					$('result').text('通讯有问题');
+				});
+			});
+		</script>
+	</body>
+
+</html>

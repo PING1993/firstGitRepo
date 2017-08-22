@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				background: url(images/bkg-blu.jpg) no-repeat center 0;text-align: center;
+			}
+			img{
+				display: none;
+			}
+		</style>
+		<script type="text/javascript">
+			/*for (var i=0;i<3;i++) {
+				document.title=i;
+			}*/
+		/*	var i=0;
+			var timer=null;
+			function fn1(){
+				i++;
+				document.title=i;
+				if(i==10){
+					clearInterval(timer);//清除
+				}
+			}*/
+			//setInterval(函数,毫秒);//重复执行
+			//timer=setInterval(fn1,1000);//每个一段时间调用，频率,至少14之上
+			//clearInterval(timer);
+			//fn1();//直接调用
+			//document.onclick=fn1;//事件调用
+		</script>
+	</head>
+	<body>
+		<input type="button" name="" id="" value="换背景吧" />
+		<input type="button" name="" id="" value="停" />
+		<img src="images/black-star.jpg" id="ad"/>
+		<script type="text/javascript">
+			var aBtn=document.getElementsByTagName('input');
+			var arrUrl=['images/bkg-blu.jpg','images/black-star.jpg','images/gold-star.jpg','images/white-star.jpg'];
+			var num=0;
+			var timer=null;
+			var oBody=document.body;
+			//oBody.style.background='url('+arrUrl[num]+')';
+			aBtn[0].onclick=function(){
+				clearInterval(timer);
+				timer=setInterval(function(){
+					oBody.style.background='url('+arrUrl[num]+')';
+					num++;
+					num %=arrUrl.length;
+				},2000);
+				aBtn[1].onclick=function(){
+					clearInterval(timer);
+				}
+			};
+		</script>
+		<script type="text/javascript">
+			//var timer=setTimeout(函数,毫秒);//执行一次
+			//var timer=setTimeout(函数,毫秒);
+			//clearTimeout(timer);
+			
+				
+				var time=null;
+				var oImg=document.getElementById('ad');
+				var time=null;
+				time=setTimeout(function(){
+					oImg.style.display='inline-block';
+					setTimeout(function(){
+					oImg.style.display='none';
+					},3000);
+				},1000);
+		</script>
+	</body>
+</html>

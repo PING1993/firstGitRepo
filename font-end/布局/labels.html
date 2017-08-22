@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<!--学习了required和labels的用法-->
+		<!--<script type="text/javascript">
+			function validate() {
+				var txtName = document.getElementById('textName');
+				var btnValidate = document.getElementById('btnValidate');
+				var form = document.getElementById('textform');
+				//trim移除空格
+				if(txtName.value.trim() == "") {
+					var label = document.createElement('label');
+					label.setAttribute('for', 'textName');
+					//放置在btnValidate前面
+					form.insertBefore(label, btnValidate);
+					txtName.labels[1].innerHTML = "请输入姓名";
+					txtName.labels[1].setAttribute('style', 'font-size: 9px;color: red;');
+				}
+			}
+		</script>-->
+		<form action="" method="" id="textform">
+			<label id="label" for="textName">姓名：</label>
+			<input required="required" type="text" name="textName" id="textName" value="" />
+			<input type="submit" id="btnValidate" value="验证" <!--onclick="validate()-->" />
+		</form><hr />
+		<!---->
+		<form action="" method="" id="textform">
+			<input type="submit" name="s1" id="" formmethod="post" value="submit" formaction="https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D/drawImage" />
+			<!--get后带字符串，而post直接跳转到所指页面-->
+			<input type="submit" name="s2" value="提交" formmethod="get" formaction="https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D/drawImage"/>
+		</form>
+		
+		<!--formenctype-->
+		<form action="" method="get">
+			<!--空格被转化为+,不对特殊字符进行编码-->
+			<input type="text" value="" formenctype="text/plain"/>
+			<!--不对字符编码，必须使用该值-->
+			<input type="text" value="" formenctype="multipart/form-data" autofocus="autofocus"/>
+			<!--发送，action属性为get时使用该编码方式-->
+			<input type="text" value="" formenctype="application/x-www-form-urlencoded"/>
+			<input type="submit" name="" id="" value="submit" />
+		</form>
+		<!--利用form的id可以用来将form外的元素加入相应的表单内-->
+		<form action="" method="" id="textform">
+			<input type="text" value=""/>
+		</form>
+		<textarea name="" rows="" cols="" form="textform"></textarea>
+		<!---->
+		<table border="2" cellspacing="10" cellpadding="10" bgcolor="#FF0000" background="../images/0.png">
+			<tr><th>Header</th><th>Header</th></tr>
+			<tr><td>Data</td><td>Data</td></tr>
+			<tr><td>Data</td><td>Data</td></tr>
+			<tr><td>Data</td><td></td></tr>
+		</table>
+		<!---->
+		<a href="#tip">点我</a><br /><br /><br /><br /><br /><br /><br /><br />
+		<a name="tip" href="https://www.baidu.com/">点我</a><!--name属性文档内跳转-->
+	</body>
+
+</html>

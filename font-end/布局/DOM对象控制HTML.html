@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<a href="#" id="a" title="我是a标签">hello</a>
+		<script type="text/javascript">
+			/*function getAttr(){
+				var oA=document.getElementById('a');
+				var attr=oA.setAttribute('title','我被改了');
+				var attr=oA.getAttribute('title');
+				alert(attr);
+			}
+			getAttr();*/
+			
+			function createNode(){
+				var doc=document.body;
+				var oA=document.getElementById('a');
+				var Inp=document.createElement('input');
+				Inp.type="button";
+				Inp.value="按钮";
+				doc.appendChild(Inp);
+				//doc.insertBefore(Inp,oA);
+				doc.removeChild(oA);
+			}
+			createNode();
+			
+			var width=document.documentElement.offsetWidth || document.body.offsetWidth;//为兼容
+			var height=document.documentElement.offsetHeight;
+			document.write(width+'/'+height);
+		</script>
+	</body>
+</html>

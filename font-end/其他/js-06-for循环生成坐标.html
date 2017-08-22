@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				width: 50px;
+				height: 50px;
+				background: red;
+				position: absolute;
+				top: 0;
+				left: 0;
+				text-align: center;
+				line-height: 50px;
+				color: #fff;
+			}
+			
+			input[type="button"] {
+				height: 50px;
+				width: 60px;
+				text-align: center;
+				line-height: 50px;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function() {
+				var aDiv = document.getElementsByTagName('div');
+				var aBtn = document.getElementsByTagName('div');
+				var str = '';
+				/*
+								for(var i=0;i<100;i++){
+									str+='<div>'+i+'</div>';
+								}
+								document.body.innerHTML=str;
+								for(var i=0;i<aDiv.length;i++){
+									aDiv[i].style.left=10+i*50+'px';
+									//aDiv[i].style.top=10+i*50+'px';
+								}*/
+
+				//被注释的for循环部分为实现每10个换行的方法
+				/*for(var i = 0; i < 100; i += 10) {
+					for(var j = 0; j < 10; j++) {
+						document.body.innerHTML += '<div>' + (i / 10 + 1) + '</div>';
+						aDiv[i + j].style.left = 10 + j * 50 + 'px';
+						aDiv[i + j].style.top = 10 + i * 6 + 'px';
+						aDiv[i].style.background = '#ccc';
+					}
+				}*/
+
+				//实现v型
+				for(var k = 0; k < 10; k++) {
+					//document.body.innerHTML += '<input type="button" value="' +'按钮'+(k+1) +'"/>';
+					document.body.innerHTML += '<div>' + (k + 1) + '</div>';
+				}
+				var len=aBtn.length;
+				for(var j = 0; j < len; j++) {
+					//aBtn[j].style.left = aBtn[len-1-j].style.left = 10 + j * 50 + 'px';
+					aBtn[j].style.left = 10 + j * 50 + 'px';
+					
+					//aBtn[j].style.top = aBtn[len-1-j].style.left = 10 + j * 50 + 'px';
+					aBtn[j].style.top = aBtn[len-1-j].style.top = 10 + j * 50 + 'px';
+					//aBtn[j].style.left = aBtn[len-1-j].style.top = 10 + j * 50 + 'px';
+				}
+			};
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

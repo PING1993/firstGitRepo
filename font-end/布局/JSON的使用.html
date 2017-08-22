@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script type="text/javascript">
+		window.onload = function() {
+			var arr = '{"people": [{"firstname":"xie","lastname": "xie","phone": [111, 111, 111]}, {"firstname": "xie","lastname": "xie","phone": [111, 111, 111]}]}';
+		var oArr = JSON.parse(arr);
+		console.log(arr);
+		console.log(oArr);
+		document.write(oArr.people[1].phone);
+		//			var jsontext = '{"firstname":"Jesper","surname":"Aaberg","phone":["555-0100","555-0120"]}';
+		//			var contact = JSON.parse(jsontext);
+		//		    console.log(jsontext);
+		//		    console.log(contact);
+		};
+	</script>
+
+	<body>
+	</body>
+
+</html>

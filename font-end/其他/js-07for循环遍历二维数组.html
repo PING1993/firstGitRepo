@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			/*var arr = [
+							[1,2,3],
+							['a','b'],
+							['c',4]
+						];
+						for(var i=0;i<arr.length;i++){
+							for(var j=0;j<arr[i].length;j++){
+								//alert(arr[i]);
+								//alert(arr[i][j]);
+							}
+						}*/
+
+			window.onload = function() {
+				var oUl = document.getElementById('list');
+				var aUl = oUl.getElementsByTagName('ul');
+				var len = aUl.length;
+				var aLi = null;
+
+				for(var i = 0; i < len; i++) {
+					aLi = aUl[i].getElementsByTagName('li');
+					for(var j = 0; j < aLi.length; j++) {
+						aLi[j].style.border = '2px solid red';
+					}
+				}
+			};
+		</script>
+	</head>
+
+	<body>
+		<ul id="list">
+			<li>
+				<h2>我的好友</h2>
+				<ul>
+					<li>张三</li>
+					<li>李四</li>
+				</ul>
+			</li>
+			<li>
+				<ol>
+					<li>no</li>
+					<li>no</li>
+				</ol>
+			</li>
+			<li>
+				<h2>我的坏友</h2>
+				<ul>
+					<li>张五</li>
+					<li>李六</li>
+					<li>李八</li>
+				</ul>
+			</li>
+			<li>
+				<ol>
+					<li>no</li>
+					<li>no</li>
+				</ol>
+			</li>
+			<li>
+				<h2>我的黑名单</h2>
+				<ul>
+					<li>张七</li>
+				</ul>
+			</li>
+		</ul>
+	</body>
+
+</html>

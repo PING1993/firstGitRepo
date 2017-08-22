@@ -1,0 +1,190 @@
+h1,h3,p,a,button{
+	font-family: "arial, helvetica, sans-serif";
+}
+.onepage{
+	height: 750px;
+}
+.onepage-bg{
+	/*保证充满全屏*/
+	height: 800px;
+	width: 100%;
+	position: absolute;
+	/*水平垂直居中*/
+	background-position: center center;
+	background-size: cover;
+}
+#onepagebg{
+	background-image: url(../images/1.jpg);
+}
+.headh1content{
+	margin-top: 150px;
+	/*行间距*/
+	line-height: 60px;
+}
+.title-text{
+	margin-left: 50px;
+}
+.headfontsize h1{
+	color: #fff;
+}
+.headfontsize p{
+	color: #fff;
+	margin-top: 40px;	
+	line-height: 33px;
+}
+.btn-app-store{
+	margin-right: 150px;
+}
+.twopage{
+	padding: 2px 0 0 2px;
+	height: auto;
+	/*background-image: url(../images/1.jpg) ;*/
+	/*relative会显示到之前元素的下方*/
+	position: relative;
+}
+.twopage-text{
+	width: 100%;
+	text-align: center;
+}
+.twopage-text-h1{
+	margin-left: 120px;
+	/*文字字间间距*/
+	letter-spacing: 2px;
+	margin-top: 80px;
+	margin-bottom: 0;
+	padding: 20px 0 0;
+}	
+.twopage-text-h1 img{
+	width: 120px;
+	margin-top: -60px;
+}
+.twopage .row{
+	margin-left: 0;
+	margin-right: 0;
+}
+.twopage-courses{
+	float: left;
+	background: #fff;
+	padding: 0 2px 2px 0;
+	position: relative;
+	overflow: hidden;
+}
+.twopage-text-h1 >a{
+	width: 100%;
+	height: 100%;
+	float: left;
+	text-align: center;
+	position: relative;
+}
+.classicon h3{
+	margin-top: 120px;
+	color: #00008B;
+}
+.classicon h1{
+	color: #092079;
+}
+.classicon{
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: absolute;
+	opacity: 0;
+}
+.classicon:hover{
+	opacity: 0.9;
+	transition: opacity 0.5s ease-in 1s
+	-webkit-transition: opacity 0.2s;
+	background: #00FFFF;
+	color: #fff;
+}
+.twopagebtn{
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+}
+.twopagebtn .btn-lg{
+	font-size: 20px;
+}
+#twopage-easy{
+	margin: 60px 0 100px;
+}
+.threepage{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #00FFFF;
+	/*background: center center;*/
+	/*background-repeat: no-repeat;*/
+	/*background-size: cover;*/
+}
+#threepagebg{
+	/*background-image: url(../images/1.jpg);*/
+}
+.threepage-content{
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 25px;
+}
+.threepage-text{
+	margin-top: 100px;
+}
+.threepage-text p{
+	margin-top: 20px;
+	color: #0000FF;
+	font-size: 20px;
+	line-height: 25px;
+}
+.threepagebtn{
+	margin-top: 300px;
+	font-size: 30px;
+}
+.fourpage{
+	height: 700px;
+	margin-top: 700px;
+	background: #0000FF;
+}
+.course-text{
+	margin-top: 200px;
+	width: 100%;
+	text-align: center;
+}
+.course-text p{
+	margin-top: 25px;
+	font-size: 20px;
+}
+#carousel{
+	margin-top: 150px;
+	margin-left: 250px;
+}
+.carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev {
+    left: -50%;
+    /*margin-left: -10px;*/
+}
+.side-nav{
+	position: fixed;
+	top: 45%;
+	right: 20px;
+	/*防止被覆盖*/
+	z-index: 1;
+}
+.side-nav ul.nav-side-nav{
+	list-style: none;
+	text-align: center;
+	margin: 0;
+	padding-left: 0;
+}
+.side-nav ul.nav-side-nav>li{
+	display: block;
+	line-height: 1.45em;
+	margin: 0;
+	padding: 8px 0;
+}
+.side-nav ul.nav-side-nav>li>a{
+	display: block;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: #000;
+}

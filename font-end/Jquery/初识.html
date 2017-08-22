@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../js/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="../js/app.js"></script>
+	</head>
+
+	<body>
+		<p>hello</p>
+		<p>hello</p>
+		<p>hello</p>
+		<form action="" method="">
+			<input type="url" name="url" id="" value="https://www.baidu.com/" />
+			<input type="submit" name="" id="" value="提交" />
+		</form>
+		<input type="date" name="" id="" value="" />
+		<input type="time" name="" id="" value="10:00" />
+		<input type="time" name="" id="" value="" />
+		<input type="time" name="" id="" value="" />
+		<form action="" method="">
+			<input type="email" name="" id="" value="" />
+			<input type="submit" value="提交" />
+		</form>
+		<input type="month" name="" id="" value="" />
+		<input type="week" name="" id="" value="" />
+		<input type="number" name="" id="" value="15" min="10" max="100" step="5" />
+
+		<script type="text/javascript">
+			function sum() {
+				var n1 = document.getElementById('n1').valueAsNumber;
+				var n2 = document.getElementById('n2').valueAsNumber;
+				
+				return document.getElementById('result').valueAsNumber = n1 + n2;
+			}
+		</script>
+		<form action="" method="">
+			<input type="number" name="n1" id="n1" value="" />+<input type="number" id="n2" />=<input type="number" id="result" readonly/>
+			<input type="button" value="计算" onclick='sum()' />
+			<!--submit按钮提交在瞬间完成不会停留而button会-->
+		</form>
+		<input type="range" name="" id="" value="25" min="0" max="100" step="5"/>
+		<input type="search" name="" id="" value="" />
+		<input type="tel" name="" id="" value="" />
+		<input type="color" name="" id="" value="" onchange="document.body.style.background=document.getElementById('currentColor').textContent=this.value"/>
+		<span id="currentColor"></span>
+		<script type="text/javascript">
+			function value_change(){
+				var num=document.getElementById('range').value;
+				document.getElementById('output').value=num;
+			}
+			function check(){
+				var email=document.getElementById('email');
+				if(email.value==''){
+					alert('请输入email');
+					return false;
+				}else if(!email.checkValidity()){
+					alert('请输入正确的email');
+					return false;
+				}
+			}
+		</script>
+		<form action="" method="" id="textform" onsubmit="check()" novalidate="true">
+			<input type="range" name="" id="range" value="10" min="0" max="100" step="5" onchange="value_change()"/>
+			<output id="output">10</output><br />
+			<label for="email">Email</label>
+			<input type="email" name="email" id="email" value="" /><br />
+			<input type="submit" id="" name="" />
+		</form>
+		
+	</body>
+
+</html>

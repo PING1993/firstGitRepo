@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload=function(){
+				//document.body=2324;错误的
+				document.body.innerHTML='add';//当document中只有一个时，可直接这样使用，不需要给其专门设置id或通过tagname来获取
+				document.title=123;
+				var oBtn=document.body.getElementsByTagName('input');
+				//alert(oBtn.length);取不到长度
+				document.body.innerHTML='<input type="button" value="按钮"/><input type="button" value="按钮"/><input type="button" value="按钮"/>';
+				//alert(oBtn.length);//可取到，需先在body里innerHtml里添加
+				
+				/*oBtn[0].onclick=function(){
+					alert('1');
+				};
+				oBtn[1].onclick=function(){
+					alert('2');
+				};
+				oBtn[2].onclick=function(){
+					alert('3');
+				};*/
+				
+				for(var i=0;i<oBtn.length;i++){
+					console.log(i);
+					oBtn[i].onclick=function(){
+					//alert(i);//出现的警告提示i===3
+				};
+				}
+				
+			};
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

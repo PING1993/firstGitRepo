@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--<script type="text/javascript">
+			//法一
+			/*people=new Object();
+			people.name="evelyn";
+			people.age=24;*/
+			//法一
+//			people={'name':'evelyn','age':32};
+//			document.write(people.name+"/"+people.age);
+            //法三
+            function people(name,age){
+            	this._name=name;
+            	this._age=age;
+            }
+            son=new people('david',30);
+            document.write(son._name+'/'+son._age);
+		</script>-->
+		<!--<script type="text/javascript">
+			var a=['hello','world'];
+			var b=['你好'];
+			var m=[1,4,2,6];
+			//var c=a.concat(b);
+			var c=b.concat(a);
+			a.push(b);
+			//document.write(c);
+			//document.write(m.sort());
+			//document.write(a);
+			document.write(a.reverse());
+		</script>-->
+		<script type="text/javascript">
+			var str='hello,world';
+			var s=str.split(',');
+			//document.write(str.length);
+//			document.write(str.indexOf('l'));
+//			document.write(str.match('hello'));
+//			document.write(str.replace('o','8'));
+//			document.write(str.toUpperCase());
+//			document.write(s.length);
+			document.write(s[1]);
+		</script>
+	</body>
+</html>

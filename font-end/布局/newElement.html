@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<!--autocomplete="on"相同于不填写autocomplete当输入的同时显示候选列表-->
+		<input type="text" name="greeting" id="greeting" autocomplete="on" list="greetings" value="" />
+		<!--datalist本身不显示，当获得焦点时显示-->
+		<datalist id="greetings" style="display: none;">
+				<option value="html5">html5</option>
+				<option value="android">android</option>
+				<option value="ios">ios</option>
+		</datalist><hr />
+		<!---->
+		<form action="" method="">
+			<input type="text" name="greeting" id="greeting" list="greetings" value="" />
+			<datalist id="greetings" style="display: none;"><!--默认不显示，但为了不同浏览器的兼容问题，自行设置不显示-->
+				<!--value必须设置否则不显示选项-->
+				<option value="html5">html5</option>
+				<option value="android">android</option>
+				<option value="ios">ios</option>
+			</datalist>
+		</form><hr />
+		<!---->
+		<form action="" method="post">
+			<input type="image" name="" id="" alt="编辑" value="" />
+			<input type="submit" value="submit"/>
+		</form>
+		<!---->
+		<input type="checkbox" name="cb" id="cb" indeterminate value="" />测试
+		<script type="text/javascript">
+			var cb=document.getElementById('cb');
+			cb.indeterminate=true;
+		</script>
+		<!---->
+		<script type="text/javascript">
+			function AD() {
+				var control = document.forms[0]['text'];
+				var dir=control.selectionDirection;
+				alert(dir);
+			}
+		</script>
+		<form action="" method="">
+			<input type="text" name="text" id="text" value="" />
+			<input type="button" name="btn" id="btn" value="submit" onclick="AD()" />
+		</form>
+		<!---->
+		<form action="" method="post">
+			<input type="" name="text" pattern="[A-Z]{3}" id="text" value="" />
+			<input type="submit" value="提交" />
+		</form>
+		<!---->
+		<script type="text/javascript">
+			function setValue() {
+				var label = document.getElementById('label');
+				var textvalue = label.control;
+				textvalue.value = "010101";
+			}
+		</script>
+		<form action="" method="">
+			<label id="label">邮编：
+		<input type="text" maxlength="6" name="" id="" value="" />
+		<small>请输入6位邮编</small>
+			</label>
+			<input type="button" name="" id="" value="设置默认值" onclick="setValue()" />
+		</form>
+		<!--ol,dl,cite,small-->
+		<ol start="3" reversed="">
+			<li></li>
+			<li></li>
+			<li></li>
+		</ol>
+		<dl>
+			<dt>hello</dt>
+			<dd>你好</dd>
+			<dt>blog</dt>
+			<dd>博客</dd>
+		</dl>
+		<p>电影名字为<cite>速度与激情</cite></p>
+		<p>你好<small>我叫</small></p>
+		<!--meter-->
+		<meter value="40" min="0" max="100" low="10" high="90" optimum="80"></meter>
+		<meter>40/100</meter>
+		<!--progress的使用-->
+		<script type="text/javascript">
+			function btn() {
+				/*for (var i=0;i<=100;i++) {
+					setTimeout(function(){
+						updateprogress(i);
+					},1000);
+				}*/
+				var i = 0;
+
+				function progress_thread_one() {
+					if(i <= 100) {
+						i++;
+						updateprogress(i);
+					}
+				}
+				setInterval(progress_thread_one, 100);
+			}
+
+			function updateprogress(newValue) {
+				var progressBar = document.getElementById('progress');
+				progressBar.value = newValue;
+				progressBar.getElementsByTagName('span')[0].textContent = newValue;
+			}
+		</script>
+		<section>
+			<h2>progress元素的使用</h2>
+			<p>完成的百分比<progress id="progress" max="100"><span>0</span>%</progress></p>
+			<input type="button" bgcolor="grey" name="" id="" onclick="btn()" value="点击" />
+		</section>
+		<!--figure以及figcaption元素-->
+		<figure>
+			<!--移除对页面无影响-->
+			<img src="../images/0.png" />
+			<img src="../images/0.png" />
+			<img src="../images/0.png" />
+			<!--只能放置一个，代表标题-->
+			<figcaption>图片数字</figcaption>
+		</figure>
+		<script type="text/javascript">
+			function detail_onclick() {
+				var p = document.getElementById('p');
+				if(detail.open) {
+					p.style.visibility = "hidden";
+				} else {
+					p.style.visibility = "visible";
+				}
+			}
+		</script>
+		<!--details和summary-->
+		<details id="detail" onclick="detail_onclick(this)">
+			<!--summary为标题，如未定义，则默认显示“详细信息”-->
+			<summary>速度与激情</summary>
+			<p id="p" style="visibility: hidden;">你好吗？</p>
+		</details>
+		<!--mark元素，需突出或高亮显示-->
+		<p>这是为<mark>测试</mark>段落</p>
+	</body>
+
+</html>

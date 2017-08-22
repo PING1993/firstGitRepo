@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#container {
+				width: 400px;
+				height: 300px;
+				margin: 0 auto;
+				border: 1px solid #000;
+				position: relative;
+			}
+			
+			#container ul {
+				width: 388px;
+				height: 30px;
+				margin: 0;
+				padding: 0;
+				position: absolute;
+				display: inline-flex;
+				margin: 5px;
+				border: 1px solid #0000FF;
+			}
+			
+			#container ul li {
+				width: 130px;
+				list-style: none;
+				border: 1px solid #000;
+			}
+			
+			#container ul li a {
+				text-decoration: none;
+				text-align: center;
+				line-height: 30px;
+				padding: 10px;
+				color: #000;
+			}
+			/*方法二：直接使用hover，推荐使用,但缺点是鼠标点击后背景不能显示*/
+			/*#container ul li:hover {
+				font-size: 20px;*/
+				/*color: #0000FF;适用于有color属性的*/
+			/*	background: #00FFFF;
+			}*/
+			/*#container ul li:active {
+				background: #4CAE4C;
+			}*/
+			
+			#container #content {
+				width: 388px;
+				height: 256px;
+				position: absolute;
+				bottom: 7px;
+				left: 5px;
+				border: 1px solid red;
+				text-indent: 20px;
+			}
+			
+			.lis {
+				background: red;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function() {
+				var oDiv = document.getElementById('container');
+				var aLi = oDiv.getElementsByTagName('li');
+				var oDivC = document.getElementById('content');
+				var arr = ['我是div1', '我是div2', '我是div3'];
+				var num=0;
+				var str=[];
+				
+				oDivC.innerHTML = arr[0];
+				
+				for(var i = 0; i < aLi.length; i++) {
+					fn1(aLi[i], oDivC, arr[i]);
+				}
+				function fn1(aLi, oDivC, arr) {
+					aLi.onclick = function() {
+						//类似于active
+						aLi.className = 'lis';
+						oDivC.innerHTML = arr;
+					};
+					//方法一：使用onmouseover 和 onmouseout ，些许复杂
+					aLi.onmouseover = function() {
+						aLi.style.fontSize = '20px';
+						aLi.style.background = '#00FFFF';
+					};
+					aLi.onmouseout = function() {
+						aLi.style.fontSize = '';
+						aLi.style.background = '';
+					};
+				}
+			};
+		</script>
+	</head>
+
+	<body>
+		<div id="container">
+			<ul>
+				<li class="lis">
+					<a href="javascript:;">热搜</a>
+				</li>
+				<li>
+					<a href="javascript:;">喜欢</a>
+				</li>
+				<li>
+					<a href="javascript:;">赞</a>
+				</li>
+			</ul>
+			<div id="content">
+
+			</div>
+		</div>
+	</body>
+
+</html>

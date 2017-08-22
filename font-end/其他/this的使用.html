@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//alert(this);//object window
+			//window.alert(1);相同于alert(1);
+			
+			//this 调用当前方法或函数的那个对象
+			
+			/*function fn1(){
+				alert(this);
+			}*/
+			//window.fn1();
+			//fn1();
+			
+			
+			window.onload=function(){
+				var aBtn=document.getElementsByTagName('input');
+				var that=null;
+				
+				for (var i=0;i<aBtn.length;i++) {
+					/*aBtn[i].onclick=function(){
+						//this.style.background="red";
+						that=this;
+						fn1();
+					};*/
+					aBtn[i].onclick=fn1;
+				}
+				function fn1(){
+					//this ->window
+					//that.style.background="red";
+					this.style.background="yellow";
+				}
+			};
+			
+		</script>
+	</head>
+	<body>
+		<input type="button" name="btn1" id="btn1" value="按钮1"/>
+		<input type="button" name="btn1" id="btn1" value="按钮2"/>
+		<input type="button" name="btn1" id="btn1" value="按钮3"/><!--
+		<input type="button" name="btn2" onclick="alert(this);fn1()" id="btn2" value="按钮2"/>-->
+		<!--<script type="text/javascript">
+			var oBtn=document.getElementById('btn1');
+			//oBtn.onclick=fn1;//谁让函数动，显示谁显示为按钮HTML元素
+			oBtn.onclick=function(){//匿名函数显示Windows
+				fn1();
+			};
+		</script>-->
+	</body>
+</html>

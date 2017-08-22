@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.div{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onunload=function(){
+				alert('我要被关了');
+			};
+		</script>
+	</head>
+	<body>
+		<!--<script type="text/javascript">
+			var n=10;//全局变量
+			function demo(){
+				var i=10;//局部变量
+				x=10;//在函数被调用后是全局变量
+			}
+			demo();
+			alert(x);
+		</script>-->
+		
+		<button onclick="demo()" onblur="onBlur(this)">按钮</button>
+		
+		<div class="div" onmouseover="onOver(this)" onmouseout="onOut(this)">
+		</div>
+			<input type="text" name="inP" onchange="alert('内容改变了！！！')"  id="inP" value="" />
+			<input type="text" name="inP" onselect="onSelect(this)" onfocus="onFocus(this)" id="inP" value="" />
+		<script type="text/javascript">
+			function demo(){
+				//alert('hello');
+			}
+			function onOver(obj){
+				obj.innerHTML="over";
+				console.log('over');
+			}
+			function onOut(obj){
+				obj.innerHTML="out";
+				console.log('out');
+			}
+			function onChange(){
+				alert('内容改变了！！！');
+			}
+			function onFocus(obj){
+				obj.style.background="blue";
+			}
+			function onSelect(obj){
+				obj.style.background="red";
+			}
+			function onBlur(obj){
+				obj.textContent="hi";
+			}
+			
+			//异常处理
+			function demo0(){
+				try{
+					alert(str);
+				}catch(e){
+					alert(e);
+				}
+			}
+			//demo0();
+			function demo1(){
+				try{
+					var oInp=document.getElementById('Inp').textContent;
+					if(oInp==''){
+						throw '请输入';
+					}
+				}catch(err){alert(err);}
+			}
+			demo1();
+		</script>
+	</body>
+</html>

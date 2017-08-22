@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			li {
+				list-style: none;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function() {
+				var oUl = document.getElementsByTagName('ul')[0];
+				var aLi = oUl.getElementsByTagName('li');
+				var aInp = oUl.getElementsByTagName('input');
+
+				for(var i = 0; i < aLi.length; i++) {
+					aInp[i].onclick = function() {
+						if(!aInp[aLi.length - 1].checked) {
+							//alert(1);
+							for(var i = 0; i < aLi.length; i++) {
+								aInp[i].checked = '';
+							}
+						} else if(aInp[aLi.length - 1].checked) {
+							//alert(2);
+							for(var i = 0; i < aLi.length; i++) {
+								aInp[i].checked = 'checked';
+							}
+						}
+						/*else if(aInp[aLi.length-1].checked && aInp[i].checked) {
+						alert(3);
+						aInp[aLi.length-1].checked='';
+					}*/
+					};
+				};
+
+			};
+		</script>
+	</head>
+
+	<body>
+		<ul>
+			<li>
+				<input type="checkbox" name="M1" id="" value="ABC音乐" />ABC音乐
+			</li>
+			<li>
+				<input type="checkbox" name="M2" checked="" id="" value="今天在下雨" />今天在下雨
+			</li>
+			<li>
+				<input type="checkbox" name="M3" id="" value="天亮了" />天亮了
+			</li>
+			<li>
+				<input type="checkbox" name="M4" id="" value="全选" />全选
+			</li>
+
+		</ul>
+	</body>
+
+</html>

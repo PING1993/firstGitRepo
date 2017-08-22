@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script type="text/javascript">
+		window.onload = function() {
+			setInterval(fnTimer, 1000);
+			fnTimer();
+
+			function fnTimer() {
+				var oBody=document.body;
+				var oP = document.getElementsByTagName('p')[0];
+				var aImg=document.getElementsByTagName('img');
+				
+				var myTime = new Date();
+				//alert(myTime);//获取系统当前时间
+				var myHours = myTime.getHours(); //16
+				var myMinutes = myTime.getMinutes(); //22
+				var mySeconds = myTime.getSeconds(); //34
+
+				function toTwo(n) {
+					return n < 10 ? '0' + n : ''+n;
+				}
+				
+				var str= toTwo(myHours) + toTwo(myMinutes) + toTwo(mySeconds);
+				oP.innerHTML = str;
+				
+				for (var i=0;i<aImg.length;i++) {
+					aImg[i].src='images/'+str.charAt(i)+'.png';
+				}
+				
+			}
+
+		};
+	</script>
+
+	<body style="font-size: 20px;">
+		<p>kjdskkj</p>
+		<img src="images/0.png"/>
+		<img src="images/0.png"/>
+		<img src="images/0.png"/>
+		<img src="images/0.png"/>
+		<img src="images/0.png"/>
+		<img src="images/0.png"/>
+	</body>
+
+</html>

@@ -1,0 +1,47 @@
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+	body {
+		padding-top: 5%;
+		background: -webkit-radial-gradient(circle, rgba(19, 1, 93, 1), rgba(19, 1, 93, 0.66));
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	body {
+		padding-top: 9%;
+		background: -webkit-radial-gradient(circle, rgba(19, 1, 93, 1), rgba(19, 1, 93, 0.66));
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	body {
+		padding-top: 5%;
+		background: -webkit-radial-gradient(circle, rgba(19, 1, 93, 1), rgba(19, 1, 93, 0.66));
+	}
+}
+
+#arrowDown,
+#eye {
+	cursor: pointer;
+	position: absolute;
+	z-index: 2;
+	display: block;
+	line-height: 34px;
+	text-align: center;
+}
+
+#eye {
+	top: 0;
+	right: 0;
+	width: 34px;
+	height: 34px;
+}
+
+#arrowDown {
+	top: 15px;
+	right: 15px;
+}
+
+#userName,
+#pwd {
+	text-indent: 20px;
+}

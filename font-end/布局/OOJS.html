@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//			var person={
+			//				name:"iwan",
+			//				age:20,
+			//				eat:function(){alert(1);}
+			//			}
+			//			alert(person.name);
+			function people(name) {
+				this._name=name;
+			}
+			people.prototype.say = function() {
+				alert('1'+name);
+			}
+
+			function student(name) {
+				this._name=name;
+				supersay.call(this);
+				alert('student'+" "+name);
+			}
+			student.prototype = new people('iwan');
+			var supersay=student.prototype.say;
+			var s = new student('iwan');
+			s.say();
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript">
+			window.onload = function() {
+				var oTable = document.getElementById('table');
+				var aTr=oTable.getElementsByTagName('tr');
+				var obj = {
+					"data": [{
+							"cavNo": "1",
+							"num2": "2",
+							"num3": "3",
+							"num4": "4",
+							"num5": "1"
+						},
+						{
+							"cavNo": "1",
+							"num2": "",
+							"num3": "",
+							"num4": "",
+							"num5": "2"
+						},
+						{
+							"cavNo": "1",
+							"num2": "",
+							"num3": "",
+							"num4": "",
+							"num5": "3"
+						},
+						{
+							"cavNo": "2",
+							"num2": "1",
+							"num3": "2",
+							"num4": "3",
+							"num5": "4"
+						}
+					]
+				};
+				var lastCavNo=-1;
+				for(var i = 0; i < obj.data.length; i++) {
+					var cavNo=obj.data[i].cavNo;
+					var rowspan=1;
+					if(cavNo!=lastCavNo){
+						oTable.innerHTML+='<tr><td>'+cavNo+'</td><td>'+obj.data[i].num2+'</td><td>'+obj.data[i].num3+'</td><td>'+obj.data[i].num4+'</td><td>'+obj.data[i].num5+'</td></tr>';
+					}else{
+						rowspan++;
+						oTable.innerHTML+='<tr><td>'+obj.data[i].num5+'</td></tr>';
+						
+					}
+					lastCavNo=cavNo;
+				}
+			};
+		</script>
+	</head>
+
+	<body>
+		<table id="table" border="1">
+		</table>
+	</body>
+
+</html>

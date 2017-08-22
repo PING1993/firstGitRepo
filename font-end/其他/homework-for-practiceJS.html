@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>-->
+		<style type="text/css">
+			a {
+				text-decoration: none;
+			}
+			
+			#setting_btn {
+				color: white;
+				background: red;
+				border: 1px solid #000;
+				line-height: 50px;
+				text-align: center;
+				padding: 4px;
+				font-size: 15px;
+			}
+			
+			#div1 {
+				height: 100px;
+				width: 100px;
+				border: 4px solid #000;
+			}
+			
+			#modal_form {
+				width: 300px;
+				height: 150px;
+				display: none;
+				padding: 10px;
+				top: 20px;
+				left: -4px;
+				margin:20px auto;
+			}
+			
+			p a {
+				width: 50px;
+				height: 15px;
+				border: 1px solid #000;
+				background: #8C8C8C;
+				color: #fff;
+				padding: 5px;
+			}
+			
+			#red {
+				background: red;
+			}
+			
+			#yellow {
+				background: yellow;
+			}
+			
+			#blue {
+				background: blue;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function() {
+				var setting_btn = document.getElementById('setting_btn');
+				var div1 = document.getElementById('div1');
+				var modal_form = document.getElementById('modal_form');
+				var red = document.getElementById('red');
+				var yellow = document.getElementById('yellow');
+				var body = document.getElementById('body');
+				var blue = document.getElementById('blue');
+				var w200 = document.getElementById('w200');
+				var w300 = document.getElementById('w300');
+				var w400 = document.getElementById('w400');
+				var h200 = document.getElementById('h200');
+				var h300 = document.getElementById('h300');
+				var h400 = document.getElementById('h400');
+				var reset = document.getElementById('reset');
+				var ok = document.getElementById('ok');
+
+				setting_btn.onclick = function() {
+					modal_form.style.display = 'block';
+					body.style.opacity='0.8';
+					modal_form.style.background='cyan';
+				};
+				red.onclick = function() {
+					red.style.color = "#000";
+					red.style.border = "2px solid #000"
+					div1.style.background = 'red';
+				};
+				yellow.onclick = function() {
+					yellow.style.color = "#000";
+					yellow.style.border = "2px solid #000"
+					div1.style.background = 'yellow';
+				};
+				blue.onclick = function() {
+					blue.style.color = "#000";
+					blue.style.border = "2px solid #000"
+					div1.style.background = 'blue';
+				};
+				w200.onclick = function() {
+					div1.style.width = '200px';
+					w200.style.background = "orange";
+				};
+				w300.onclick = function() {
+					div1.style.width = '300px';
+					w300.style.background = "orange";
+				};
+				w400.onclick = function() {
+					div1.style.width = '400px';
+					w400.style.background = "orange";
+				};
+				h200.onclick = function() {
+					div1.style.height = '200px';
+					h200.style.background = "orange";
+				};
+				h300.onclick = function() {
+					div1.style.height = '300px';
+					h300.style.background = "orange";
+				};
+				h400.onclick = function() {
+					div1.style.height = '400px';
+					h400.style.background = "orange";
+				};
+				reset.onclick = function() {
+					div1.style.height = '100px';
+					div1.style.width = '100px';
+					div1.style.background = 'white';
+				};
+				ok.onclick = function() {
+					modal_form.style.display = 'none';
+				};
+			};
+		</script>
+	</head>
+
+	<body id="body">
+		<div id="modal_form">
+				<p id="bg">请选择背景色:
+					<a id="red" href="#">红</a>
+					<a id="yellow" href="#">黄</a>
+					<a id="blue" href="#">蓝</a>
+				</p>
+				<p>请选择宽(px):
+					<a id="w200" href="#">200</a>
+					<a id="w300" href="#">300</a>
+					<a id="w400" href="#">400</a>
+				</p>
+				<p>请选择高(px):
+					<a id="h200" href="#">200</a>
+					<a id="h300" href="#">300</a>
+					<a id="h400" href="#">400</a>
+				</p>
+				<button id="reset">恢复</button>
+				<button id="ok">确定</button>
+		</div>
+		<div id="container">
+			<strong>请为下面的Div设计样式：</strong>
+			<a id="setting_btn" href="#">点击设置</a>
+			<div id="div1"></div>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta charset="{CHARSET}">
+		<title></title>
+	</head>
+	<style type="text/css" media="screen">
+		body {
+			background: #fff;
+			width: 500px;
+			margin: 20px auto;
+		}
+		
+		input,
+		textarea,
+		p {
+			font-family: 宋体, 黑体;
+			font-size: 12pt;
+		}
+		
+		input,
+		textarea {
+			border: solid 1px #aaa;
+			padding: 4px;
+			width: 98%;
+		}
+	</style>
+	<script type="text/javascript" src="js/swfobject.js"></script>
+	<script type="text/javascript" src="js/downloadify.js"></script>
+	<script type="text/javascript" src="js/jspdf.js"></script>
+	<!-- <script type="text/javascript" src="js/downloadify.min.js"></script> -->
+	<script type="text/javascript">
+		window.load = function() {
+			Downloadify.create('downloadify', {
+				filename: function() {
+					return document.getElementById('filename').value;
+				},
+				data: function() {
+					var doc = new jsPDF();
+					doc.text(20, 20, document.getElementById('data').value);
+					doc.addPage();
+					doc.text(20, 20, document.getElementById('data').value);
+					return doc.output();
+				},
+				onComplete: function() {
+					alert('成功保存文件!');
+				},
+				onCancel: function() {
+					alert('您已经取消保存文件');
+				},
+				onError: function() {
+					alert('出现错误了');
+				},
+				swf: 'js/downloadify.swf',
+				downloadImage: 'js/download.png',
+				width: 100,
+				height: 30,
+				transparent: true,
+				append: false
+			});
+		}
+	</script>
+
+	<body>
+		<input type="text" name="filename" placeholder="文件名.pdf" id="filename" /><br />
+		<textarea cols="60" rows="10" name="data" id="data">it seem do not support to Chinese</textarea>
+		<p id="downloadify">You must have Flash 10 installed to download this file.</p>
+	</body>
+
+</html>

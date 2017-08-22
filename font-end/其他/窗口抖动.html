@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/miaov.js"></script>
+		<style type="text/css">
+			img {
+				width: 200px;
+				height: 200px;
+				top: 0;
+				position: absolute;
+				margin-left: 20px;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function() {
+				var aImg = document.getElementsByTagName('img');
+
+				for(var i = 0; i < aImg.length; i++) {
+					aImg[i].style.left=parseInt(getStyle(aImg[i],'marginLeft'))+i*220+'px';
+					aImg[i].onmouseover = fnShake;
+				}
+			};
+		</script>
+	</head>
+
+	<body>
+		<img src="images/bkg-blu.jpg" alt="" />
+		<img src="images/bkg-blu.jpg" alt="" />
+		<img src="images/bkg-blu.jpg" alt="" />
+		<img src="images/bkg-blu.jpg" alt="" />
+	</body>
+
+</html>

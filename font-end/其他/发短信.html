@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#container {
+				width: 400px;
+				height: 400px;
+				margin: 30px auto 0;
+				border: 10px solid #ccc;
+			}
+			
+			#content {
+				width: 390px;
+				height: 350px;
+				border: 1px solid #000;
+				padding: 4px;
+				overflow: scroll;
+			}
+			
+			#img1 {
+				width: 15px;
+				height: 15px;
+				margin-right: 5px;
+				left: 10px;
+			}
+			
+			#subContent {
+				line-height: 45px;
+				display: flex;
+				padding: 10px;
+			}
+			
+			
+		</style>
+		<script type="text/javascript">
+			window.onload = function() {
+				var oContent = document.getElementById('content');
+				var oImg1 = document.getElementById('img1');
+				var oText = document.getElementById('text');
+				var oSend = document.getElementById('send');
+
+				var onOff = true;
+
+				oImg1.onclick = function() {
+
+					if(onOff) {
+						oImg1.src = 'images/iis-8.png';
+						onOff = false;
+					} else {
+						oImg1.src = 'images/bkg-blu.jpg';
+						onOff = true;
+					}
+				};
+
+				oSend.onclick = function() {
+					if(oText.value == '') {
+						alert('输点什么吧~~~');
+					} else if(onOff) {
+						oContent.innerHTML = '<img style="width:20px;height:20px;margin:10px 10px 5px" src=' + oImg1.src +'/>' + oText.value + '<br/>' + oContent.innerHTML;
+					} else {
+						oContent.innerHTML = oText.value + '<img style="width:20px;height:20px;margin:10px 10px 5px;" src=' + oImg1.src + '/>' + '<br/>' + oContent.innerHTML;
+					}
+					oText.value = '';
+				}
+
+			};
+		</script>
+	</head>
+
+	<body>
+		<div id="container">
+			<div id="content">
+			</div>
+			<div id="subContent">
+
+				<img id="img1" src="images/bkg-blu.jpg" />
+				<!--<input type="text" name="" id="text" value="" placeholder="请在这儿输入点内容吧" />-->
+				<input type="text" name="" id="text" />
+				<button id="send">发送</button>
+			</div>
+		</div>
+	</body>
+
+</html>

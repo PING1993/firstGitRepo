@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			ul {
+				margin: 0;
+				padding: 0;
+				display: inline-flex;
+			}
+			
+			li {
+				list-style: none;
+				margin-right: 5px;
+			}
+			
+			ul li a {
+				text-decoration: none;
+			}
+			
+			#list {
+				width: 300px;
+				height: 30px;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function() {
+				var oUl = document.getElementById('list');
+				var aLiP = oUl.getElementsByTagName('li');
+				var oDiv = document.getElementById('sub_list');
+				var aUl = oDiv.getElementsByTagName('ul');
+				//var aLiS = oDiv.getElementsByTagName('li');
+				var timer = null;
+
+				for(var i = 0; i < aUl.length; i++) {
+					//alert(aUl.length);//4
+					aUl[i].style.display = 'none';
+				}
+				for(var i = 0; i < aLiP.length; i++) {
+					//alert(aLiP.length);//4
+					aLiP[i].index = i;
+					aLiP[i].onmouseover = show;
+					aLiP[i].onmouseout = hide;
+				}
+				for(var j = 0; j < aUl.length; j++) {
+					//alert(aLiP.length);//4
+					aUl[j].index = j;
+					aUl[j].onmouseover = show;
+					aUl[j].onmouseout = hide;
+				}
+				function show() {
+					clearInterval(timer);
+					aUl[this.index].style.display = 'inline-flex';
+				}
+				function hide() {
+					var index=this.index;
+					timer = setTimeout(function() {
+						aUl[index].style.display = 'none';
+					}, 14);
+				}
+
+			};
+		</script>
+	</head>
+
+	<body>
+		<ul id="list">
+			<li>
+				<a href="javascript:;">首页 | </a>
+			</li>
+			<li>
+				<a href="javascript:;">产品 | </a>
+			</li>
+			<li>
+				<a href="javascript:;">关于 | </a>
+			</li>
+			<li>
+				<a href="javascript:;">疑惑</a>
+			</li>
+		</ul>
+
+		<div id="sub_list">
+			<ul>
+				<li>
+					<a href="javascript:;">首页子菜单 | </a>
+				</li>
+				<li>
+					<a href="javascript:;">首页子菜单 | </a>
+				</li>
+				<li>
+					<a href="javascript:;">首页子菜单</a>
+				</li>
+			</ul>
+
+			<ul>
+				<li>
+					<a href="javascript:;">产品子菜单 | </a>
+				</li>
+				<li>
+					<a href="javascript:;">产品子菜单</a>
+				</li>
+			</ul>
+
+			<ul>
+				<li>
+					<a href="javascript:;">关于子菜单 | </a>
+				</li>
+				<li>
+					<a href="javascript:;">关于子菜单 </a>
+				</li>
+			</ul>
+
+			<ul>
+				<li>
+					<a href="javascript:;">疑惑子菜单 | </a>
+				</li>
+				<li>
+					<a href="javascript:;">疑惑子菜单</a>
+				</li>
+			</ul>
+		</div>
+
+	</body>
+
+</html>

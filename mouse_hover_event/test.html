@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<li><a href=""><img src="./test.jpg" onmouseover="ci(this)">  户外运动</a></li>
+<script>
+function ci (e) {
+//e.src=file:///C:/Users/Admin/Desktop/test.jpg
+alert('e.src='+e.src);
+//e.src.length=39
+alert('e.src.length='+e.src.length);
+//src1=t.jpg
+src1=e.src.substr(-5);
+alert('src1='+src1);
+//src2=file:///C:/Users/Admin/Desktop/te
+src2=e.src.substring(0,e.src.length-6);
+alert('src2='+src2);
+//e.src=file:///C:/Users/Admin/Desktop/te1t.jpg
+e.src=src2+"1"+src1;
+alert('e.src='+e.src);
+}
+</script>
+</body>
+</html>

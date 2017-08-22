@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
+		<script src="../js/jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="container">
+	<!--<ul id="mytab" class="nav nav-tabs" role="tablist">-->
+	<ul id="mytab" class="nav nav-pills nav-justified" role="tablist">
+		<li role="presentation" class="active">
+			<a href="#">Home</a>
+		</li>
+		<li role="presentation">
+			<a href="#">About</a>
+		</li>
+		<!--<li role="presentation" class="disabled"><a href="#">Contact</a></li>-->
+		<li role="presentation" class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Contact<span class="caret"></span></a>
+			<ul class="dropdown-menu">
+				<li>
+					<a href="#" tabindex="1">hello1</a>
+				</li>
+				<li>
+					<a href="#" tabindex="2">hello2</a>
+				</li>
+				<li>
+					<a href="#" tabindex="0">hello3</a>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<script type="text/javascript">
+	$('#mytab a').click(function(e) {
+		e.preventDefault();
+		$(this).tab('show');
+	})
+</script>
+	</body>
+</html>

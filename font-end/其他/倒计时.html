@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			setInterval(dateConverter,1000);
+			dateConverter();
+			function dateConverter() {
+			    var oBody=document.body;
+				var iNow = new Date();
+				//var iNew = new Date(2017, 6, 7, 15,0,0);//年月日时分秒   数字形式   由于月份的特殊性6即表示7月份
+				var iNew=new Date('July 7,2017 10:46:00');//字符串形式
+				var differ=iNew-iNow;//得到的时间差是毫秒
+				//alert(differ);
+				var t=Math.floor(differ/1000);//毫秒-->秒
+				//alert(t);
+				var str=Math.floor(t/86400) + '天' + Math.floor(t%86400/3600) + '时' + Math.floor(t%86400%3600/60) + '分' + t%60 + '秒';
+				//alert(str);
+				oBody.innerHTML=str;
+			}
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

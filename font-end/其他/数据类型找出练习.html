@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//alert(Number('100px'));//NaN
+			//alert(Number([]));//0
+			//alert(Number(true));//1
+			//alert(Number('23.45元'));//NaN
+			//alert(parseInt('23.45元'));//23
+			//alert(parseInt([]));//NaN
+			//alert(parseInt());//NaN
+			//alert(parseInt(true));//NaN
+			//alert(parseInt(0));//0
+			//alert(parseInt('300'));//300
+			//alert(parseInt('100px'-100));//100  NaN
+			var arr = ['100px', 'abc' - 3, [], -9876, 34, -2, 0, '300', , function() {
+				alert(1);
+			}, null, document, [], true, '200px' - 30, '23.45元', 6, Number('abc'), function() {
+				alert(3);
+			}];
+			var str = [];
+			var num = [];
+			var numM = [];
+			var numN = [];
+			var numI = [];
+
+			function fn1() {
+				//////////////////////////////////
+				for(var i = 0; i < arr.length; i++) {
+					if(typeof(arr[i]) == 'string') {
+						console.log(arr[i]);
+						str.push(arr[i]);
+						console.log(str);
+					} else {
+						console.log('我不是字符串');
+					}
+				}
+				console.log('在数组中我们只找到如下的string类型的数据：' + str);
+				///////////////////////////////////////////
+				for(var i = 0; i < arr.length; i++) {
+					if(!isNaN(arr[i])) {
+						console.log(arr[i]);
+						if(typeof(arr[i]) == 'number') {
+							num.push(arr[i]);
+						}
+						console.log(num);
+					} else {
+						console.log('我不是数字');
+					}
+				}
+				console.log('在数组中我们只找到如下的number类型的数据：' + num);
+				/////////////////////////////////////////////
+				for(var i = 0; i < arr.length; i++) {
+					if(Number(arr[i]) || typeof(arr[i]) == 'number') {
+						//console.log(arr[i]);
+						numI.push(arr[i]);
+						if(!isNaN(arr[i]) && typeof(arr[i]) != 'boolean') {
+							numM.push(arr[i]);
+						} else if(isNaN(arr[i]) && typeof(arr[i]) != 'string') {
+							//console.log(arr[i]);
+							numN.push(arr[i]);
+							//console.log(i);
+							numN.push(i);
+						} else {
+							console.log('我不是NaN或其他');
+						}
+						//console.log(numM);
+					} else {
+						console.log('我不能转换成数字');
+					}
+				}
+				console.log('在数组中我们只找到如下的numM类型的数据：' + numM);
+				console.log('这是所有的NaN的数据以及位置：' + numN);
+				console.log('这是所有的可转换为数据类型的数据：' + numI);
+				/////////////////////////////////////////////////////////
+
+				for(var j = 0; j < numM.length; j++) {
+					//alert(numM);
+					if(numM[j] <= numM[j + 1]) {
+					var max = numM[j];
+					var temp = null;
+					var min = numM[j + 1];
+						temp = min;
+						min = max;
+						max = temp;
+					}
+				}
+				console.log('我是最大的数字: ' + max);
+				
+				//////////////////////////////////////////////////////
+			}
+			fn1();
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

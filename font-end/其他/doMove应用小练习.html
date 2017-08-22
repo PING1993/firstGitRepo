@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/miaov.js"></script>
+		<script type="text/javascript">
+			window.onload = function() {
+				var aDiv = document.getElementsByTagName('div');
+				var len = 20;
+				var str = '';
+				var num = 0;
+				var timer = null;
+
+				for(var i = 0; i < len; i++) {
+					str += '<div style="top:0;position:absolute;height:50px;width:50px;background:red;margin-left:' + i * 60 + 'px;"></div>';
+				}
+				document.body.innerHTML = str;
+				document.onclick = function() {
+					clearInterval(timer);
+					if(num === 0) {
+						timer = setInterval(function() {
+							doMove(aDiv[num], 'marginTop', 10, 500);
+							num++;
+							if(num === len) {
+								clearInterval(timer);
+							}
+						}, 100);
+					} else if(num === len) {
+						num = num - 1;
+						timer = setInterval(function() {
+							doMove(aDiv[num], 'marginTop', 10, 10);
+							num--;
+							if(num < 0) {
+								clearInterval(timer);
+								num = 0;
+							}
+						}, 100);
+					}
+				};
+			};
+
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

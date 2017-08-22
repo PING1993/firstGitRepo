@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//alert(fn1(1,2,3));//未定义
+			//function fn1(){
+				//var arr=[];
+				//for (var i=0;i<arguments.length;i++) {
+					//arr.push(arguments[i]);//arguments是实参存储仓库或实参的集合，它是一个object
+				//}
+				//alert(arr);//返回传入的参数，虽然函数中未进行定义
+				//alert(arguments.length);//3
+			//}
+			
+			
+			//当传入实参数量不一致时，使用arguments
+			/*alert(sum(1,2,3));//6
+			alert(sum(1,2,3,4));//10
+			function sum(){
+				var n=0;
+				for (var i=0;i<arguments.length;i++) {
+					n+=arguments[i]
+				}
+				return n;
+			}*/
+			
+			
+			//实参既能改也能读
+			var a=1;
+			function fn1(a){
+				//alert(a);//1
+				arguments[0]=3;
+				//alert(a);//3
+				//var a=2;
+				arguments[0]=9;
+				//alert(a);//9
+				//alert(a);//2
+			}
+			fn1(a);
+			//alert(a);//1
+			//alert(a);//1
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script type="text/javascript">
+		window.onload = function() {
+			setInterval(fnTimer, 1000);
+			fnTimer();
+
+			function fnTimer() {
+				var oBody = document.body;
+				var myTime = new Date();
+				//alert(myTime);//获取系统当前时间
+				var myDay = myTime.getDay(); //2  //2代表星期二   ------星期日为0
+				var myDate = myTime.getDate(); //4
+				var myYear = myTime.getFullYear(); //2017
+				var myHours = myTime.getHours(); //16
+				var mySeconds = myTime.getSeconds(); //34
+				//var myMilliseconds=myTime.getMilliseconds();//790
+				var myMinutes = myTime.getMinutes(); //22
+				var myMonth = myTime.getMonth() + 1; //6  //月份比较特殊从0开始的所以需要+1
+				//var myTime=myTime.getTime();//一串不明字符串
+				//alert(myTime);
+
+				//将数字转化为星期几字段
+				if(myDay == 0) {
+					myDay = '星期日'
+				} else if(myDay == 1) {
+					myDay = '星期一'
+				} else if(myDay == 2) {
+					myDay = '星期二'
+				} else if(myDay == 3) {
+					myDay = '星期三'
+				} else if(myDay == 4) {
+					myDay = '星期四'
+				} else if(myDay == 5) {
+					myDay = '星期五'
+				} else if(myDay == 6) {
+					myDay = '星期六'
+				}
+				//alert(toTwo(5));
+				//alert(toTwo(15));
+
+				function toTwo(n) {
+					/*if(n<10){
+						return '0'+n;
+					}else{
+						return n;
+					}*/
+					return n < 10 ? '0' + n : ''+n;
+				}
+
+				//alert(myYear + '年' + myMonth + '月' + myDate + '日 ' + myDay + ' ' + myHours + ':' + myMinutes + ':' + mySeconds);
+
+				oBody.innerHTML = myYear + '年' + myMonth + '月' + myDate + '日 ' + myDay + ' ' + myHours + ':' + toTwo(myMinutes) + ':' + toTwo(mySeconds);
+			}
+
+		};
+	</script>
+
+	<body style="font-size: 20px;">
+	</body>
+
+</html>

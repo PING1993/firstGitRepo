@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="btn" onclick="demo()">按钮</button>
+		<p></p>
+		<script type="text/javascript">
+			function demo(){
+				/*history.forward();//前一页
+				history.back();//后一页
+				history.go(-1);//去到历史的一条记录*/
+				document.getElementsByTagName('p')[0].innerHTML=window.location.hostname;
+				document.getElementsByTagName('p')[0].innerHTML=window.location.hostname;
+				document.getElementsByTagName('p')[0].innerHTML=window.location.hostname;
+				document.getElementsByTagName('p')[0].innerHTML=window.location.protocol;
+				document.getElementsByTagName('p')[0].innerHTML=window.location.hostname;
+				document.getElementsByTagName('p')[0].innerHTML=window.location.assign("http://www.baidu.com");
+			}
+		</script>
+	</body>
+</html>

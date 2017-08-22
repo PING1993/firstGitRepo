@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload=function(){
+				var oUI=document.getElementById('list');//静态的，找到的是某个特定的
+				//var oUI=document.getElementsByTagName('ul');//找到的是一个数组，动态的,如要使用时，tagname后必须加[],如getElementsByTagName('ul')[0]
+				var oLi=oUI.getElementsByTagName('li');//找到ul下的所有li
+				//alert(oLi.length);
+				//alert(oLi[0]);
+				//document.getElementsByTagName('li');//使用document,会得到所有的li,包括ul里的和ol里的li
+			};
+		</script>
+	</head>
+	<body>
+		<ul id="list">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+		<ol>
+			<li></li>
+			<li></li>
+		</ol>
+	</body>
+</html>

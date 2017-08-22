@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			ul{
+				padding: 0;
+				margin: 0;
+			}
+			li{
+				list-style: none;
+			}
+			.lis{
+				width: 80px;
+				height: 30px;
+				border: 1px solid #333;
+				position: relative;
+			}
+			li a{
+				display: block;
+				line-height: 30px;
+				text-align: center;
+				text-decoration: none;
+				color: #000;
+				background: #f1f1f1;
+			}
+			ul ul{
+				padding: 0;
+				margin: 0;
+				width: 140px;
+				border: 1px solid #333;
+				position: absolute;
+				top: 30px;
+				left: -1px;
+				background: #D58512;
+				display: none;/*显示为无*/
+				/*visibility: hidden;*//*隐藏*/
+				/*width/height、透明度、left/top、拿个白色的div盖住、margin负值*/
+			}
+			ul li{
+				text-align: center;
+				line-height: 30px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<ul>
+			<li id="lis" class="lis">
+				<a href="#" id="link">微博</a>
+				<ul id="ul1">
+					<li>私信</li>
+					<li>评论</li>
+					<li>@我</li>
+				</ul>
+			</li>
+		</ul>
+		
+		<script type="text/javascript">
+			window.onload=function (){
+			/*document.getElementById('link').onclick=abc;*/
+			var li=document.getElementById('lis');
+			var ul=document.getElementById('ul1');
+			var a=document.getElementById('link')
+			li.onmouseover=function (){
+				/*alert('ok');*/
+				ul.style.display='block';
+				a.style.background='yellow';
+			};
+			li.onmouseout=function (){
+				ul.style.display='none';
+				a.style.background='white';
+			};
+			/*JS中如何获取元素：
+			   1.通过ID获取元素：
+			       document get element by id 'link'
+			   .....
+			   事件：鼠标事件，键盘事件，系统事件，表单事件，自定义事件.....
+			   onclick
+			   onmouseover
+			   onmouseout
+			   onmousedown
+			   onmouseup
+			   onmousemove
+			   
+			   onload 加载完后执行....
+			   window.onload=事情
+			   img.onload
+			   body.onload
+			   ......
+			 如何添加事件：元素.onmouseover()
+			 函数：命令
+			   function abc(){
+			   	......
+			   }
+			   
+			   function(){} 匿名函数
+			   元素。事件=匿名函数
+			   
+			   1.直接调用abc();
+			   2.事件调用：元素.事件=函数 名  oDiv.onclick=abc;
+			   学会测试 alert(1);
+			   随时写随时测试
+			   
+			 */
+			}
+		</script>
+	</body>
+
+</html>

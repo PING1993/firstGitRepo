@@ -1,0 +1,106 @@
+/** {
+	margin: 0;
+	padding: 0;
+}
+
+.heading,
+.container,
+.footing {
+	margin: 10px auto;
+}
+
+.heading {
+	height: 100px;
+	background: chocolate;
+}
+
+.left,
+.main,
+.right {
+	background: cyan;
+}
+
+.footing {
+	height: 100px;
+	background: darkblue;
+}
+
+@media screen and (min-width: 960px) {
+	.heading,
+	.container,
+	.footing {
+		width: 960px;
+	}
+	.left,
+	.main,
+	.right {
+		float: left;
+		height: 500px;
+	}
+	.left,
+	.right {
+		width: 200px;
+	}
+	.main {
+		margin-left: 5px;
+		margin-right: 5px;
+		width: 550px;
+	}
+	.container {
+		height: 500px;
+	}
+}
+
+@media only screen and (min-width: 600px) and (max-width: 960px) {
+	.heading,
+	.container,
+	.footing {
+		width: 600px;
+	}
+	.left,
+	.main {
+		float: left;
+		height: 400px;
+	}
+	.right {
+		display: none;
+	}
+	.left {
+		width: 160px;
+	}
+	.main {
+		margin-left: 5px;
+		width: 435px;
+	}
+	.container {
+		height: 400px;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.heading,
+	.container,
+	.footing {
+		width: 400px;
+	}
+	.right,
+	.left {
+		width: 400px;
+		height: 100px;
+	}
+	.right{
+		margin-top: 10px;
+	}
+	.main {
+		margin-top: 10px;
+		width: 400px;
+		height: 200px;
+	}
+	.container {
+		height: 420px;
+	}
+}*/
+
+body{
+	background: blue;
+}

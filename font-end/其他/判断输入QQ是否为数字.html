@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+
+		</style>
+		<script type="text/javascript">
+			window.onload = function() {
+				var arr = ['请输入一些东西吧......', '请输入数字吧', '不能以0开始，没有这样的账号，亲重新输入......', '不能是小数', '输入的数字必须在5位以上10位以内','恭喜，您终于输对格式啦'];
+				var aInp = document.getElementsByTagName('input');
+				var oPrompt = document.getElementById('prompt');
+
+				aInp[1].onclick = function() {
+					var oIvalue = aInp[0].value;
+					//alert(oIvalue);
+					if(oIvalue == '') {
+						oPrompt.innerHTML = arr[0];
+					} else if(!Number(oIvalue)) {
+						oPrompt.innerHTML = arr[1];
+					} else if(oIvalue.charAt(0)==0) {
+						oPrompt.innerHTML = arr[2];
+					}else if(parseInt(oIvalue)!=parseFloat(oIvalue)){
+						//alert(Number(oIvalue));
+						oPrompt.innerHTML = arr[3];
+					}else if(oIvalue.length <= 5 || oIvalue.length > 10){
+						//alert(Number(oIvalue));
+						oPrompt.innerHTML = arr[4];
+					}else{
+						oPrompt.innerHTML = arr[5];
+					}
+					oPrompt.style.color = 'red';
+				};
+			};
+		</script>
+	</head>
+
+	<body>
+		<lable>请输入QQ号码：</lable>
+		<input type="text" name="" id="" value="" />
+		<input type="button" id="" value="判读是否为数字" />
+		<span id="prompt"></span>
+	</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/miaov.js"></script>
+		<style type="text/css">
+			#div1 {
+				width: 100px;
+				height: 100px;
+				background: red;
+				margin-left: 30px;
+				/*margin-top: 10px;*/
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function() {
+				var oBtnR = document.getElementById('btnR');
+				var oBtnL = document.getElementById('btnL');
+				var oDiv = document.getElementById('div1');
+				/*var timer=null;*/
+				//oDiv.timer=null;
+
+				oBtnR.onclick = function() {
+					doMove(oDiv,'marginLeft',19,800,function(){
+						//alert(1);
+						//doMove(oDiv,'height',10,300);
+						doMove(oDiv,'width',10,200);
+						//doMove(oDiv,'marginTop',10,200);
+					}/*回调函数*/);
+				};
+				oBtnL.onclick = function() {
+					doMove(oDiv,'marginTop',19,10);
+				};
+			};
+		</script>
+	</head>
+
+	<body>
+		<input type="button" name="" id="btnL" value="左" />
+		<input type="button" name="" id="btnR" value="右" />
+		<div id="div1">
+
+		</div>
+	</body>
+
+</html>

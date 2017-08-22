@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//注意：在head标签里记得onload，或直接放到body里
+			window.onload = function() {
+				var arr = ['海军舰艇编队启航赴俄参加联演 052D舰首次参加', '梁振英忆基本法征求意见:香港人关注回归后用何钞票', '最高法：婚内与他人同居 过错方应“赔当其过', '牟其中出狱后首次公开亮相 召回旧部欲东山再起', '曹德旺10亿美元在美国建厂 换来辱骂起诉和罚单'];
+				var oBtn = document.getElementById('btn1');
+				var oUl = document.getElementById('list');
+
+				var onOff = true;
+
+				oBtn.onclick = function() {
+					//oBtn.disabled=true;
+					//oBtn.style.display="none";
+					//oUl.innerHTML='';
+					
+					//onOff = false;不可以，其余几种均可以
+					
+					if(onOff) {
+						//onOff = false;
+						for(var i = 0; i < arr.length; i++) {
+							oUl.innerHTML += '<li>' + arr[i] + '</li>';
+						}
+						onOff = false;
+					}
+					//onOff = false;
+				};
+			};
+		</script>
+	</head>
+
+	<body>
+		<button id='btn1'>自动生成5条新闻</button>
+		<ul id="list"></ul>
+	</body>
+
+</html>

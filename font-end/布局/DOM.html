@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div id="div1">
+			<button id="btn">按钮</button>
+			<a href="http://www.baidu.com">百度</a>
+		</div>
+		<script type="text/javascript">
+			var x = document.getElementById('btn');
+			var y = document.getElementById('div1');
+			var z = document.getElementsByTagName('a')[0];
+			//添加
+			//在我只点击button的情况下，div的方法也别执行，此为冒泡，我们可进行阻止
+			x.addEventListener('click', hello);
+			y.addEventListener('click', world);
+			z.addEventListener('click', function(e){
+				e.preventDefault();//阻止默认事件
+			});
+			//x.addEventListener('click',world);
+			//移除句柄
+			//x.removeEventListener('click',hello);
+			//x.removeEventListener('click',world);
+			function hello(e) {
+				alert(e.type);
+				//alert(e.target);
+				e.stopPropagation();//阻止事件冒泡
+			}
+
+			function world() {
+				//alert(1);
+				//alert('world')
+			}
+			//alert(Math.random());
+
+			//attachEvent为IE6之下的版本
+			/*if (x.addEventListener) {
+				x.addEventListener('click',hello);
+			}else if(x.attachEvent){
+				x.attachEvent('onclick',hello);
+			}else{
+				x.onclick=hello;
+			}*/
+		</script>
+	</body>
+
+</html>

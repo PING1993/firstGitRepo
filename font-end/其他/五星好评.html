@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#list {
+				margin: 0;
+				padding: 0;
+				width: 400px;
+				height: 50px;
+				margin: 0 auto;
+			}
+			
+			#list li {
+				list-style: none;
+				display: inline-flex;
+			}
+			
+			#list li a {
+				text-decoration: none;
+			}
+			
+			img {
+				width: 50px;
+				height: 50px;
+			}
+			
+			span {
+				color: red;
+				margin-left: 20px;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function() {
+				var oUl = document.getElementById('list');
+				var aLi = oUl.getElementsByTagName('li');
+				var aImg = oUl.getElementsByTagName('img');
+				var oSpan = oUl.getElementsByTagName('span')[0];
+
+				var aSrc = ['images/white-star.jpg', 'images/black-star.jpg', 'images/gold-star.jpg'];
+				var aText = ['极差', '较差', '推荐', '良好', '优秀'];
+				var str = aSrc[0];
+				var arr=[];
+
+				for(var i = 0; i < aLi.length; i++) {
+					aLi[i].innerHTML = '<a href="javascript:;">' + '<img src="images/white-star.jpg"/></a>';
+				}
+				for(var i = 0; i < aLi.length; i++) {
+					aLi[i].index=i;
+					switch(i) {
+						case 0:
+							fn1(aLi[i], aImg[i], aSrc[1], aText[i]);
+							break;
+						case 1:
+							fn1(aLi[i], aImg[i], aSrc[1], aText[i]);
+							break;
+						default:
+							fn1(aLi[i], aImg[i], aSrc[2], aText[i]);
+							break;
+					}
+				}
+
+				function fn1(aLi, aImg, aSrc, aText) {
+					aLi.onclick = function() {};
+					aLi.onmouseover = function() {
+						aImg.src = aSrc;
+						oSpan.innerHTML = aText;
+					};
+					aLi.onmouseout = function() {
+						aImg.src = str;
+						oSpan.innerHTML = '';
+					};
+				}
+
+			};
+		</script>
+	</head>
+
+	<body>
+		<ul id="list">
+			<h2>评价：</h2>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<span id=""></span>
+		</ul>
+	</body>
+
+</html>

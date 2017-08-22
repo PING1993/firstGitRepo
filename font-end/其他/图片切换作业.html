@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#container,
+			#container1 {
+				margin: 0;
+				padding: 0;
+				width: 300px;
+				height: 200px;
+				margin: 0 auto;
+				position: relative;
+			}
+			
+			#container1 {
+				/*display: flex;*/
+				display: none;
+				margin: 20px auto;
+			}
+			
+			#container img,
+			#container1 img {
+				width: 300px;
+				height: 200px;
+			}
+			
+			#container p,
+			#container1 p {
+				margin: 0;
+				width: 300px;
+				height: 20px;
+				line-height: 20px;
+				text-align: center;
+				position: absolute;
+				background: #000;
+				color: #fff;
+			}
+			
+			#p1,
+			#top {
+				top: 0;
+			}
+			
+			#p2,
+			#bottom {
+				bottom: 0;
+			}
+			
+			a {
+				text-decoration: none;
+				font-size: 50px;
+				border: 3px solid #ccc;
+				color: #fff;
+				background: #000;
+				position: absolute;
+				width: 35px;
+				text-align: center;
+				line-height: 50px;
+				top: 77px;
+			}
+			
+			#prev,
+			#left {
+				left: 0;
+			}
+			
+			#next,
+			#right {
+				right: 0;
+			}
+			
+			#circle_btn {
+				margin: 0;
+				padding: 0;
+				position: absolute;
+				left: 120px;
+				bottom: 30px;
+			}
+			
+			#circle_btn li {
+				width: 10px;
+				height: 10px;
+				border: 3px solid #C7254E;
+				border-radius: 100%;
+				display: inline-flex;
+				list-style: none;
+			}
+			
+			#circle_btn li:hover{
+				opacity: 0.5;
+			}
+						
+			.active {
+				background: #AC2925;
+			}
+		</style>
+		<!--代码会顺序执行，所以一定要注意代码的顺序可能会影响整个效果-->
+		<script type="text/javascript">
+			window.onload = function() {
+				var oP1 = document.getElementById('p1');
+				var oP2 = document.getElementById('p2');
+				var oImg = document.getElementsByTagName('img')[0];
+				var oPrev = document.getElementById('prev');
+				var oNext = document.getElementById('next');
+				var aImg = ['images/bkg-blu.jpg', 'images/iis-8.png', 'images/loader.jpg', 'images/msweb-brand.png'];
+				var aText = ['图片一', '图片二', '图片三', '图片四'];
+
+				var oTop = document.getElementById('top');
+				var oBottom = document.getElementById('bottom');
+				var oContainer1 = document.getElementById('container1');
+				var oImg1 = oContainer1.getElementsByTagName('img')[0];
+				var oLeft = document.getElementById('left');
+				var oRight = document.getElementById('right');
+				var aImg1 = ['images/bkg-blu.jpg', 'images/iis-8.png', 'images/loader.jpg'];
+				var aText1 = ['图片一', '图片二', '图片三'];
+
+				var oCircle = document.getElementById('circle_btn');
+				var aLi = oCircle.getElementsByTagName('li');
+				var oPreview=document.getElementById('preview');
+
+				var num = 0;
+				var num1 = 0;
+
+				function fnTab() {
+
+					oImg.src = aImg[num];
+					oP1.innerHTML = aText[num];
+					oP2.innerHTML = num + 1 + '/' + aImg.length;
+
+					oImg1.src = aImg1[num1];
+					oTop.innerHTML = aText1[num1];
+					oBottom.innerHTML = num1 + 1 + '/' + aImg1.length;
+				}
+				fnTab();
+
+				for(var i = 0; i < aLi.length; i++) {
+					aLi[i].index=i;
+					aLi[i].onclick = function() {
+						num=this.index;
+					    fnTab();
+						for(var i = 0; i < aLi.length; i++) {
+							aLi[i].className = '';
+						}
+						this.className = 'active';
+					};
+					aLi[i].onmouseover=function(){
+						//alert(aImg[this.index]);
+						oPreview.innerHTML='<img style="width:50px;height:40px;" src='+aImg[this.index]+' />';
+						oPreview.style.cssText='position:absolute;bottom:50px;left:120px;display: block;';
+					};
+					aLi[i].onmouseout=function(){
+						oPreview.style.display='none';
+					};
+				}
+				oPrev.onclick = function() {
+					if(num == 0) {
+						num = aImg.length;
+					}
+					if(num1 == 0) {
+						num1 = aImg1.length;
+					}
+					num--;
+					num1--;
+					fnTab();
+
+				};
+
+				oNext.onclick = function() {
+					num++;
+					num1++;
+					if(num == aImg.length) {
+						num = 0;
+					}
+					if(num1 == aImg1.length) {
+						num1 = 0;
+					}
+					fnTab();
+				};
+
+				oImg.onclick = function() {
+					num++;
+					num1++;
+					if(num == aImg.length) {
+						num = 0;
+					}
+					if(num1 == aImg1.length) {
+						num1 = 0;
+					}
+					for(var i = 0; i < aImg.length; i++) {
+						for(var j = 0; j < aLi.length; j++) {
+							aLi[j].className='';
+						}
+						aLi[num].className='active';
+						fnTab();
+					}
+					for(var i = 0; i < aImg1.length; i++) {
+						fnTab();
+					}
+						
+				};
+			};
+		</script>
+	</head>
+
+	<body>
+		<div id="container">
+			<p id="p1">文字正在加载中.......</p>
+			<p id="p2">数量正在加载中......</p>
+			<img src="" />
+			<a id="prev" href="javascript:;">
+				<</a>
+					<a id="next" href="javascript:;">></a>
+					<ul id="circle_btn">
+						<li class="active"></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+					<div id="preview">
+						
+					</div>
+		</div>
+		<div id="container1">
+			<p id="top">文字正在加载中......</p>
+			<p id="bottom">数量正在加载中......</p>
+			<img src="" />
+			<a id="left" href="javascript:;">
+				<</a>
+					<a id="right" href="javascript:;">></a>
+		</div>
+	</body>
+
+</html>
